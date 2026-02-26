@@ -1,0 +1,97 @@
+{
+  "_comment": "Assistant calendar preferences. Pattern matching is case-insensitive substring — first match wins.",
+  "_optional_fields": "Each pattern can also include: calendar_name (route to a different calendar), recurrence (RRULE string for recurring events).",
+
+  "patterns": [
+    {
+      "match": ["standup", "stand-up", "daily sync", "daily scrum", "morning sync"],
+      "duration_minutes": 30,
+      "color": "bold_blue",
+      "reminder_minutes": 5
+    },
+    {
+      "match": ["1:1", "one on one", "one-on-one", "1-1", "check-in with", "sync with"],
+      "duration_minutes": 60,
+      "color": "purple",
+      "reminder_minutes": 15
+    },
+    {
+      "match": ["interview", "hiring", "candidate"],
+      "duration_minutes": 60,
+      "color": "turquoise",
+      "reminder_minutes": 30
+    },
+    {
+      "match": ["review", "pr review", "code review", "design review"],
+      "duration_minutes": 45,
+      "color": "orange",
+      "reminder_minutes": 30
+    },
+    {
+      "match": ["deadline", "due:", "due date", "ship by", "launch", "release", "go live"],
+      "duration_minutes": 15,
+      "color": "bold_red",
+      "reminder_minutes": 120
+    },
+    {
+      "match": ["deploy", "deployment", "rollout"],
+      "duration_minutes": 60,
+      "color": "bold_red",
+      "reminder_minutes": 60
+    },
+    {
+      "match": ["follow up", "follow-up", "ping", "chase"],
+      "duration_minutes": 15,
+      "color": "yellow",
+      "reminder_minutes": 10
+    },
+    {
+      "match": ["decision", "decide", "vote", "sign off"],
+      "duration_minutes": 30,
+      "color": "orange",
+      "reminder_minutes": 30
+    },
+    {
+      "match": ["planning", "sprint planning", "roadmap", "quarterly"],
+      "duration_minutes": 90,
+      "color": "bold_green",
+      "reminder_minutes": 30
+    },
+    {
+      "match": ["retrospective", "retro", "post-mortem", "postmortem"],
+      "duration_minutes": 60,
+      "color": "green",
+      "reminder_minutes": 15
+    },
+    {
+      "match": ["demo", "presentation", "showcase"],
+      "duration_minutes": 30,
+      "color": "bold_green",
+      "reminder_minutes": 15
+    },
+    {
+      "match": ["bookmark", "💬", "conversation", "session save"],
+      "duration_minutes": 5,
+      "color": "purple",
+      "reminder_minutes": 0
+    }
+  ],
+
+  "defaults": {
+    "duration_minutes": 30,
+    "color": "bold_blue",
+    "reminder_minutes": 10
+  },
+
+  "_examples_with_optional_fields": [
+    {
+      "_note": "Route standup to a specific calendar and make it weekly recurring",
+      "match": ["example standup"],
+      "duration_minutes": 30,
+      "color": "bold_blue",
+      "reminder_minutes": 5,
+      "calendar_name": "Work",
+      "recurrence": "RRULE:FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+# Google OAuth — never commit these
+token.json
+credentials.json
+
+# Runtime data
+config.json
+tasks.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
